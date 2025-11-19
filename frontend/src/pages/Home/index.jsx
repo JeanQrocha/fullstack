@@ -4,11 +4,7 @@ function Home() {
     return (
         <>
             Outras informações e um
-            <Link to='/rick-and-morty'>
-                <button>
-                    Navegar para API
-                </button>
-            </Link>
+        
         </>
     )
 }

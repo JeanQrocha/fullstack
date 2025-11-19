@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import Users from './pages/users'
 import Home from './pages/Home'
 import CreateUser from './pages/Users/create'
+import RickAndMorty from './pages/RickAndMorty'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/rick-and-morty' element={<RickAndMorty/>} /> 
         <Route path='/Users' element={<Users/>} />
         <Route path='/create/user' element={<CreateUser/>} />
       </Routes>

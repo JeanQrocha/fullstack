@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getCharacters } from '../../api/character'
-import { Link } from 'react-router-dom'
+
 
 function RickAndMorty() {
     const [conteudo, setConteudo] = useState(<>Carregando</>)
@@ -19,10 +19,12 @@ function RickAndMorty() {
                 </div>
                 <div>
                     <div className='lista-secundaria'>
-                        <b>Participações: </b>
-                        {/* Desafio, traga as participações (= 
-              personagem.episode.map()
-            */}
+                            <b>Participações: </b> {
+                            personagem.episode.map((t) =>
+                                t.split("/").pop()).join(", ") 
+                            //.pop() pega o ultimo pedaco de cara item do arrey
+                            //.join() coloca uma virgula para dividir cada item do arrey
+                        }
                     </div>
                     <h5><b>Status: </b> {personagem.status} </h5>
                 </div>
@@ -41,11 +43,6 @@ function RickAndMorty() {
 
     return (
         <main>
-            <Link to='/'>
-                <button>
-                    Voltar para home
-                </button>
-            </Link>
             {/* Filtros */}
             <div className='lista-principal'>
                 {conteudo}

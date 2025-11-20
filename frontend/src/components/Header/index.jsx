@@ -1,26 +1,33 @@
 import { Link } from 'react-router-dom'
 import './style.css'
+import { AuthContext } from '../../auth/context';
+import { useContext } from 'react';
 
 export default function Header() {
+    //pegar o token do localstorage
+    const { token } = useContext(AuthContext);
     return (
         <header>
             <h1>Minha API</h1>
             <nav>
-                <Link to='/'>
+                <Link to='/login'>
+                    <button>
+                        Login
+                    </button>
+                </Link>
+                {/* <Link to='/'>
                     <button>
                         Inicio
                     </button>
-                </Link>
-                <Link to='/rick-and-morty'>
-                    <button>
-                        API Rick and Morty
-                    </button>
-                </Link>
-                <Link to='/Users'>
-                    <button>
-                        API Usuarios
-                    </button>
-                </Link>
+                </Link> */}
+                
+                {   !token
+                    ? null
+                    : <Link to='/users'>
+                        <button>
+                            Usuários
+                        </button>
+                    </Link> }
             </nav>
         </header>
     )

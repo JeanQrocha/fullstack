@@ -34,4 +34,12 @@ export const deleteUser = async (id) => { //função para deletar usuário
     }                       
     return response //retorna a resposta da api
 }
-        
+
+export const LoginUser = async (email, senha) => { //função para logar usuário
+    const response = await api.post(`/api/v1/login`, {email, senha}) //chama a api para logar o usuário
+    if(response.status !== 200){
+        throw new Error('Email ou Senha invalidos') //se a resposta for diferente de 200 lança um erro
+    }
+    return response
+}   // 
+     //chama a api para logar o usuário

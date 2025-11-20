@@ -42,7 +42,7 @@ function Users() {
                 <Link to='/create/user'>
                     <button>Criar</button>
                 </Link>
-                <div className='user header' key='header'>
+                <div className='userheader' key='header'>
                     <label>Nome</label>
                     <label>Email</label>
                     <label>Ações</label>
